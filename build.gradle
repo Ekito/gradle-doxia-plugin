@@ -1,0 +1,23 @@
+apply plugin: 'groovy'
+apply plugin: 'maven'
+
+group = 'org.ekito.gradle-plugins'
+version = '1.0-SNAPSHOT'
+
+dependencies {
+	compile gradleApi()
+	groovy localGroovy()
+	compile group: 'org.apache.maven.doxia', name:'doxia-converter', version:'1.2'
+}
+
+repositories {
+	mavenCentral()
+}
+
+uploadArchives {
+	repositories {
+		mavenDeployer {
+			repository(url: uri('../maven-repo/snapshots'))
+		}
+	}
+}
