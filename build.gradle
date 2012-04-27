@@ -12,7 +12,9 @@ dependencies {
 }
 
 repositories {
-	mavenCentral()
+	maven {
+		url"http://maven.antelink.com/content/repositories/central/"
+        }
 }
 
 uploadArchives {
